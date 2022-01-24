@@ -1,0 +1,6 @@
+dist/*
+.DS_Store
+dist/*
+!dist/images
+!dist/index.html
+node_modules

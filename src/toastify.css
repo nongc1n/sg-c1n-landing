@@ -1,0 +1,55 @@
+.toastify {
+  @apply border border-gray-300 bg-white fixed flex font-semibold items-center justify-between opacity-0 p-4 w-56 rounded shadow text-[12px] z-50;
+  transition: all 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.toastify.on {
+  @apply opacity-100;
+}
+
+.toast-close {
+  @apply cursor-pointer opacity-40;
+}
+
+.toastify-top {
+  @apply -top-36;
+}
+
+.toastify-right {
+  @apply right-4;
+}
+
+.toastify-bottom {
+  @apply -bottom-36;
+}
+
+.toastify-left {
+  @apply left-4;
+}
+
+.toastify-center {
+  @apply left-0 max-w-fit mx-auto right-0;
+}
+
+@media only screen and (max-width: 360px) {
+  .toastify-left,
+  .toastify-right {
+    @apply left-0 max-w-fit mx-auto right-0;
+  }
+}
+
+.toastify .content {
+  @apply flex font-normal items-center;
+}
+
+.toastify .content svg {
+  @apply h-5 mr-2 w-5;
+}
+
+.toastify.success .content svg {
+  @apply text-green-500;
+}
+
+.toastify.error .content svg {
+  @apply text-red-500;
+}

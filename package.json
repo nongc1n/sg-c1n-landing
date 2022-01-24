@@ -1,0 +1,35 @@
+{
+  "name": "sg-c1n-landing",
+  "version": "1.0.0",
+  "description": "Crowd One Network Services Landing page for Singapore",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve --mode=development --open",
+    "build": "export NODE_ENV=production && webpack"
+  },
+  "author": "Nikko Ong",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.16.10",
+    "@babel/plugin-transform-runtime": "^7.16.10",
+    "@babel/preset-env": "^7.16.10",
+    "autoprefixer": "^10.4.2",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.5.1",
+    "cssnano": "^5.0.15",
+    "postcss": "^8.4.5",
+    "postcss-loader": "^6.2.1",
+    "postcss-preset-env": "^7.2.3",
+    "style-loader": "^3.3.1",
+    "tailwindcss": "^3.0.15",
+    "webpack": "^5.66.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.7.3"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.16.7",
+    "pristinejs": "^0.1.9",
+    "smoothscroll-polyfill": "^0.4.4",
+    "toastify-js": "^1.11.2"
+  }
+}
