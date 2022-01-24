@@ -157,6 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const email = formData.get("email");
       const message = formData.get("message");
 
+      this.classList.add('loading');
       disableForm(e);
 
       grecaptcha.ready(() => {
