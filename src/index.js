@@ -3,6 +3,10 @@ import "./toastify.css";
 import Pristine from "pristinejs";
 import Toastify from "toastify-js";
 
+const cloudFunctionsEndpoint =
+  "https://us-central1-singaporewebsite-45f50.cloudfunctions.net";
+const siteRecaptchaKey = "6LcXETMeAAAAAENAN5bU8vrwUf9hvWzh8-o5mkv0";
+
 /**
  * ICONS
  */
@@ -117,6 +121,28 @@ document.addEventListener("DOMContentLoaded", function () {
   const pristine = new Pristine(contactForm);
   let loading = false;
 
+  function disableForm(e) {
+    const len = e.target.elements.length;
+
+    for (let i = 0; i < len; i++) {
+      e.target.elements[i].setAttribute("disabled", true);
+    }
+
+    e.submitter.lastChild.textContent = "Sending...";
+    e.submitter.setAttribute("disabled", true);
+  }
+
+  function enableForm(e) {
+    const len = e.target.elements.length;
+
+    for (let i = 0; i < len; i++) {
+      e.target.elements[i].removeAttribute("disabled");
+    }
+
+    e.submitter.lastChild.textContent = "Send";
+    e.submitter.removeAttribute("disabled");
+  }
+
   contactForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -125,38 +151,60 @@ document.addEventListener("DOMContentLoaded", function () {
     if (valid && !loading) {
       loading = true;
 
-      /**
-       * Disable form
-       */
-      e.target.childNodes[1].setAttribute("disabled", true);
-      e.submitter.lastChild.textContent = "Sending...";
-      this.classList.add("loading");
+      const formData = new FormData(this);
 
-      /**
-       * This setTimeout should be replaced by slack API
-       */
-      setTimeout(() => {
-        /**
-         * In case of error
-         * getMessage('error', 'Unable to send the message. Please try again later.')
-         * className: 'error'
-         */
-        Toastify({
-          node: getMessage("success", "Message sent"),
-          className: "success",
-          duration: 3000,
-        }).showToast();
+      const name = formData.get("name");
+      const email = formData.get("email");
+      const message = formData.get("message");
 
-        /**
-         * Enable the form after error or success
-         */
-        e.target.childNodes[1].removeAttribute("disabled");
-        e.submitter.lastChild.textContent = "Send";
-        this.classList.remove("loading");
-        this.reset(); // reset form
+      disableForm(e);
 
-        loading = false;
-      }, 1500);
+      grecaptcha.ready(() => {
+        grecaptcha
+          .execute(siteRecaptchaKey, { action: "submit" })
+          .then(async (token) => {
+            const response = await fetch(
+              `${cloudFunctionsEndpoint}/submitRequest`,
+              {
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                method: "POST",
+                body: JSON.stringify({
+                  verificationToken: token,
+                  data: {
+                    name,
+                    email,
+                    message,
+                  },
+                }),
+              }
+            );
+
+            if (response.ok) {
+              this.reset();
+
+              Toastify({
+                node: getMessage("success", "Message sent!"),
+                className: "success",
+                duration: 5000,
+              }).showToast();
+            } else {
+              Toastify({
+                node: getMessage(
+                  "error",
+                  "Unable to send the message. Please try again later."
+                ),
+                className: "error",
+                duration: 5000,
+              }).showToast();
+            }
+
+            enableForm(e);
+            this.classList.remove("loading");
+            loading = false;
+          });
+      });
     }
   });
 });

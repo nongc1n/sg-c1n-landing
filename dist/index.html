@@ -7,6 +7,7 @@
     <link rel="icon" href="images/favicon.png" sizes="16x16" type="image/png" />
     <title>C1 Network Services Singapore</title>
     <script src="bundle.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LcXETMeAAAAAENAN5bU8vrwUf9hvWzh8-o5mkv0"></script>
   </head>
   <body class="preload">
     <section id="intro">
@@ -225,67 +226,65 @@
         <h2>Contact Us</h2>
 
         <form id="contact-form" class="form mt-8">
-          <fieldset>
-            <div class="grid grid-cols-1 lg:gap-10 lg:grid-cols-2">
-              <label class="form-group" for="name">
-                <span>Name</span>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="First and last name*"
-                  required
+          <div class="grid grid-cols-1 lg:gap-10 lg:grid-cols-2">
+            <label class="form-group" for="name">
+              <span>Name</span>
+              <input
+                type="text"
+                name="name"
+                placeholder="First and last name*"
+                required
+              />
+            </label>
+
+            <label class="form-group mt-8 lg:mt-0" for="email">
+              <span>E-mail</span>
+              <input
+                type="email"
+                name="email"
+                placeholder="Your E-mail*"
+                required
+              />
+            </label>
+          </div>
+
+          <div class="grid grid-cols-1">
+            <label class="form-group mt-8" for="message">
+              <span>Message</span>
+              <textarea
+                class="w-full"
+                name="message"
+                placeholder="Write your message here..."
+                required
+              ></textarea>
+            </label>
+          </div>
+
+          <div class="flex justify-end mt-8">
+            <button class="flex items-center" type="submit">
+              <svg
+                id="spin"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  class="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  stroke-width="4"
                 />
-              </label>
-
-              <label class="form-group mt-8 lg:mt-0" for="email">
-                <span>E-mail</span>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Your E-mail*"
-                  required
+                <path
+                  class="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                 />
-              </label>
-            </div>
-
-            <div class="grid grid-cols-1">
-              <label class="form-group mt-8" for="message">
-                <span>Message</span>
-                <textarea
-                  class="w-full"
-                  name="message"
-                  placeholder="Write your message here..."
-                  required
-                ></textarea>
-              </label>
-            </div>
-
-            <div class="flex justify-end mt-8">
-              <button class="flex items-center" type="submit">
-                <svg
-                  id="spin"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <circle
-                    class="opacity-25"
-                    cx="12"
-                    cy="12"
-                    r="10"
-                    stroke="currentColor"
-                    stroke-width="4"
-                  />
-                  <path
-                    class="opacity-75"
-                    fill="currentColor"
-                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                  />
-                </svg>
-                Send
-              </button>
-            </div>
-          </fieldset>
+              </svg>
+              Send
+            </button>
+          </div>
         </form>
       </div>
     </div>

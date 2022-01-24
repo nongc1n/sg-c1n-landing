@@ -43,7 +43,7 @@
 }
 
 .toastify .content svg {
-  @apply h-5 mr-2 w-5;
+  @apply h-8 mr-2 w-8;
 }
 
 .toastify.success .content svg {
