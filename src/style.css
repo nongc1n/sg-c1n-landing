@@ -163,7 +163,7 @@
 }
 
 #intro {
-  @apply h-screen py-8 pb-16 md:py-16 relative;
+  @apply h-screen overflow-hidden py-8 pb-16 md:py-16 relative;
   background: radial-gradient(
     52.99% 135.64% at 17.81% 61.94%,
     #020817 0%,
