@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --mode=development --open",
-    "build": "export NODE_ENV=production && webpack"
+    "build": "export NODE_ENV=production && webpack",
+    "start:demo": "webpack serve --mode=development --config webpack-demo.config.js --open",
+    "build:demo": "export NODE_ENV=production && webpack --config webpack-demo.config.js"
   },
   "author": "Nikko Ong",
   "license": "ISC",

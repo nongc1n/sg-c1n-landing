@@ -4,4 +4,8 @@ dist/*
 dist/*
 !dist/images
 !dist/index.html
+!dist/demo
+dist/demo/*
+!dist/demo/images
+!dist/demo/index.html
 node_modules
