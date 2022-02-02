@@ -7,10 +7,26 @@
     <link rel="icon" href="images/favicon.png" sizes="16x16" type="image/png" />
     <title>C1 Network Services Singapore</title>
     <script src="bundle.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js?render=6LcXETMeAAAAAENAN5bU8vrwUf9hvWzh8-o5mkv0" async defer></script>
+    <script
+      src="https://www.google.com/recaptcha/api.js?render=6LcXETMeAAAAAENAN5bU8vrwUf9hvWzh8-o5mkv0"
+      async
+      defer
+    ></script>
   </head>
   <body class="preload">
     <section id="intro">
+      <picture>
+        <source srcset="images/intro.webp" type="image/webp" />
+        <source srcset="images/intro.jpg" type="image/jpg" />
+        <img
+          class="intro-bg"
+          src="images/intro.jpg"
+          alt="ball"
+          width="1440"
+          height="796"
+        />
+      </picture>
+
       <div class="container h-full relative">
         <button aria-label="menu" id="btn-menu">
           <svg
@@ -48,13 +64,13 @@
               <a href="#event">Event</a>
             </li>
             <li>
-              <a href="#knowledge">Local Knowledge</a>
+              <a href="#clients">Our Clients</a>
             </li>
           </ul>
 
           <ul>
             <li>
-              <a href="#clients">Our Clients</a>
+              <a href="#knowledge">Local Knowledge</a>
             </li>
             <li>
               <a href="#contact">Contact</a>
@@ -72,24 +88,12 @@
           />
         </div>
 
-        <picture>
-          <source srcset="images/ball.webp" type="image/webp" />
-          <source srcset="images/ball.jpg" type="image/jpg" />
-          <img
-            class="ball floating"
-            src="images/ball.jpg"
-            alt="ball"
-            width="547"
-            height="545"
-          />
-        </picture>
-
-        <div class="lg:absolute lg:h-full lg:top-56">
-          <div class="flex items-end text-sm text-white">
-            <p>What we do</p>
+        <div class="content">
+          <div class="text-sm text-c1n-orange">
+            <p class="inline">What we do</p>
             <img
-              class="ml-2 relative top-[4px]"
-              src="images/arrow.svg"
+              class="inline ml-4 relative top-[6px] lg:ml-1"
+              src="images/arrow-red.svg"
               alt="arrow"
               width="43"
               height="15"
@@ -109,7 +113,6 @@
             <source srcset="images/skarmavbild.webp" type="image/webp" />
             <source srcset="images/skarmavbild.jpg" type="image/jpg" />
             <img
-              loading="lazy"
               src="images/skarmavbild.jpg"
               alt="Skärmavbild"
               width="520"
@@ -162,7 +165,6 @@
               <source srcset="images/hosting.webp" type="image/webp" />
               <source srcset="images/hosting.jpg" type="image/jpg" />
               <img
-                loading="lazy"
                 src="images/hosting.jpg"
                 alt="Host"
                 width="570"
@@ -199,7 +201,6 @@
             <source srcset="images/meeting.webp" type="image/webp" />
             <source srcset="images/meeting.jpg" type="image/jpg" />
             <img
-              loading="lazy"
               src="images/meeting.jpg"
               alt="Meeting"
               width="520"
@@ -304,11 +305,11 @@
         </li>
 
         <li>
-          <a href="#knowledge">Local Knowledge</a>
+          <a href="#clients">Our Clients</a>
         </li>
 
         <li>
-          <a href="#clients">Our Clients</a>
+          <a href="#knowledge">Local Knowledge</a>
         </li>
 
         <li>

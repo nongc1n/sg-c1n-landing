@@ -2,6 +2,8 @@ import "./style.css";
 import "./toastify.css";
 import Pristine from "pristinejs";
 import Toastify from "toastify-js";
+import * as debounce from "lodash.debounce";
+import { ResizeObserver } from "resize-observer";
 
 const cloudFunctionsEndpoint =
   "https://us-central1-singaporewebsite-45f50.cloudfunctions.net";
@@ -51,14 +53,23 @@ document.addEventListener("DOMContentLoaded", function () {
   const btnMenu = document.getElementById("btn-menu");
   const mobileMenu = document.getElementById("mobile-menu");
 
+  const callback = debounce((e) => {
+    if (btnMenu.classList.contains("active") && e[0].contentRect.width > 1279) {
+      stateHandler(true);
+    }
+  }, 250);
+
+  const ro = new ResizeObserver(callback);
+  ro.observe(document.body);
+
   const onEscape = (e) => {
     if (e.key === "Escape") {
       stateHandler(true);
     }
   };
 
-  const stateHandler = (openState) => {
-    if (openState) {
+  const stateHandler = (closeState) => {
+    if (closeState) {
       document.removeEventListener("keydown", onEscape);
       btnMenu.classList.remove("active");
       mobileMenu.classList.remove("open");
@@ -157,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const email = formData.get("email");
       const message = formData.get("message");
 
-      this.classList.add('loading');
+      this.classList.add("loading");
       disableForm(e);
 
       grecaptcha.ready(() => {
