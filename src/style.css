@@ -163,20 +163,33 @@
 }
 
 #intro {
-  @apply py-8 pb-16 md:py-16 relative;
+  @apply h-screen overflow-hidden py-8 pb-32 lg:h-auto lg:pt-16 lg:pb-0 relative;
   background: radial-gradient(
-    36.39% 93.16% at 65.03% 50%,
-    #c9e3d9 0%,
-    #77cfad 100%
+    52.99% 135.64% at 17.81% 61.94%,
+    #020817 0%,
+    #070b14 100%
   );
 }
 
+#intro .intro-bg {
+  @apply absolute left-0 h-full object-cover object-top top-0 w-full lg:left-auto lg:object-contain lg:object-right-top lg:right-0;
+}
+
+@media (max-width: 559px) {
+  #intro .intro-bg {
+    @apply object-contain;
+  }
+}
+
 #intro .logo {
-  @apply max-h-[27px] mx-auto sm:max-h-max sm:h-[40px] sm:w-auto md:h-[44px];
+  @apply max-h-[27px] mx-auto sm:h-[40px] sm:max-h-max sm:w-auto md:h-[44px];
+}
+
+#intro .content {
+  @apply flex flex-col justify-end h-full relative z-10 lg:block lg:pt-44 lg:pb-52;
 }
 
 #intro button {
-  /* @apply -top-[14px] absolute block outline-0 right-6 z-20 sm:-top-[4px] md:-top-[2px] xl:hidden; */
   @apply -top-[14px] absolute block outline-0 right-6 z-20 sm:-top-[8px] md:-top-[6px] lg:-top-[3px] xl:hidden;
 }
 
@@ -206,7 +219,7 @@
 }
 
 #intro #desktop-menu {
-  @apply absolute hidden left-0 px-12 justify-between text-white top-[5px] w-full xl:flex lg:visible xl:px-0;
+  @apply absolute hidden left-0 px-12 justify-between opacity-80 text-white top-[5px] w-full xl:flex lg:visible xl:px-0;
 }
 
 #intro #desktop-menu ul {

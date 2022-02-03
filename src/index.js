@@ -1,6 +1,6 @@
 import "./style.css";
 import "./toastify.css";
-// import "./stars.css";
+import "./stars.css";
 import Pristine from "pristinejs";
 import Toastify from "toastify-js";
 import * as debounce from "lodash.debounce";
