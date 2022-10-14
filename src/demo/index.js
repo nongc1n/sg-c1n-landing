@@ -1,10 +1,15 @@
-import "./style.css";
+import "./fonts.css";
+import "./styles.css";
+import "./videojs.css";
 import "./toastify.css";
 import "./stars.css";
 import Pristine from "pristinejs";
 import Toastify from "toastify-js";
 import * as debounce from "lodash.debounce";
 import { ResizeObserver } from "resize-observer";
+import vh from "@sparing-software/100vh";
+import videojs from "video.js/dist/alt/video.core.novtt";
+import lozad from "lozad";
 
 const cloudFunctionsEndpoint =
   "https://us-central1-singaporewebsite-45f50.cloudfunctions.net";
@@ -41,6 +46,30 @@ if (!isSmoothScrollSupported) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  vh.init();
+
+  const observer = lozad(".lozad-video", {
+    loaded: function (el) {
+      el.classList.remove("invisible");
+
+      const player = videojs(el, {
+        aspectRatio: "4:3",
+        muted: true,
+        controlBar: false,
+        fluid: true,
+        loop: true,
+        responsive: true,
+        playsinline: true,
+      });
+
+      player.on("loadeddata", () => {
+        player.play();
+      });
+    },
+  });
+
+  observer.observe();
+
   /**
    * Remove preload to enable transition after page loaded
    */

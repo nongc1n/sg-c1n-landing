@@ -2,33 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "Gilroy";
-  src: url("./fonts/gilroy-bold-webfont.woff2") format("woff2"),
-    url("./fonts/gilroy-bold-webfont.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Gilroy";
-  src: url("./fonts/gilroy-semibold-webfont.woff2") format("woff2"),
-    url("./fonts/gilroy-semibold-webfont.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Gilroy";
-  src: url("./fonts/gilroy-regular-webfont.woff2") format("woff2"),
-    url("./fonts/gilroy-regular-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
 @layer base {
   html {
     -webkit-tap-highlight-color: transparent;
@@ -44,7 +17,7 @@
   }
 
   h1 {
-    @apply font-bold leading-[56px] text-lg tracking-[0.12em] lg:leading-[98px] lg:text-xl lg:tracking-wider;
+    @apply font-bold leading-[42px] text-lg tracking-[0.12em] lg:leading-[56px] lg:text-[50px] lg:tracking-wider;
   }
 
   h2 {
@@ -56,17 +29,17 @@
   }
 
   footer {
-    @apply bg-black py-8 text-center;
+    @apply bg-black py-8;
   }
 
-  footer p {
-    @apply text-white text-xs lg:text-base;
+  footer .footer-logo img {
+    @apply h-12 mx-auto w-auto;
   }
 }
 
 @layer components {
   #about,
-  #event,
+  #events,
   #clients,
   #contact {
     @apply py-8 lg:py-16;
@@ -76,23 +49,26 @@
     @apply py-16 lg:py-32;
   }
 
-  #event {
-    @apply py-16 lg:py-32;
+  #events {
+    @apply pb-0 pt-16 lg:py-32 lg:pb-0;
   }
 
   #clients {
-    @apply pt-0 pb-16 lg:pb-32;
+    @apply pt-16 pb-0 lg:pt-32;
   }
 
   #contact {
-    @apply pt-0 pb-16 lg:pb-32;
+    @apply py-8 lg:py-16;
   }
 
   #about img,
-  #event img,
-  #clients img {
+  #events img {
     @apply mx-auto w-full h-full object-cover max-h-[400px] md:max-h-[600px] lg:max-h-max;
     filter: drop-shadow(20px 20px 20px rgba(0, 0, 0, 0.12));
+  }
+
+  #about img {
+    @apply h-[582px];
   }
 
   .body p {
@@ -143,6 +119,10 @@
   }
 }
 
+:root {
+  --vh: 100vh;
+}
+
 /* 
   Disable transitions on load
   this class will be removed after page has loaded
@@ -162,8 +142,14 @@
   content: "";
 }
 
+/* RECAPTCHA */
+.grecaptcha-badge {
+  @apply z-50;
+}
+
 #intro {
-  @apply h-screen overflow-hidden py-8 pb-32 lg:h-auto lg:pt-16 lg:pb-0 relative;
+  @apply overflow-hidden pt-8 lg:pt-16 relative;
+  height: var(--vh);
   background: radial-gradient(
     52.99% 135.64% at 17.81% 61.94%,
     #020817 0%,
@@ -171,22 +157,25 @@
   );
 }
 
-#intro .intro-bg {
-  @apply absolute left-0 h-full object-cover object-top top-0 w-full lg:left-auto lg:object-contain lg:object-right-top lg:right-0;
+#intro:before {
+  content: "";
+  @apply absolute bg-black bg-opacity-40 h-full left-0 top-0 w-full z-10;
 }
 
-@media (max-width: 559px) {
-  #intro .intro-bg {
-    @apply object-contain;
-  }
+#intro .intro-bg {
+  @apply absolute left-0 h-full object-cover object-center top-0 w-full;
+}
+
+.logo-container {
+  @apply pointer-events-none relative -top-[19px] sm:-top-[13px] md:-top-[9px] lg:top-0 z-10;
 }
 
 #intro .logo {
-  @apply max-h-[27px] mx-auto sm:h-[40px] sm:max-h-max sm:w-auto md:h-[44px];
+  @apply h-[60px] mx-auto w-auto sm:max-h-max;
 }
 
 #intro .content {
-  @apply flex flex-col justify-end h-full relative z-10 lg:block lg:pt-44 lg:pb-52;
+  @apply absolute bottom-20 flex flex-col justify-end px-4 z-10 lg:px-0 lg:block;
 }
 
 #intro button {
@@ -219,7 +208,7 @@
 }
 
 #intro #desktop-menu {
-  @apply absolute hidden left-0 px-12 justify-between opacity-80 text-white top-[5px] w-full xl:flex lg:visible xl:px-0;
+  @apply absolute hidden left-0 px-12 justify-between opacity-80 text-white top-[14px] w-full xl:flex lg:visible xl:px-0 z-10;
 }
 
 #intro #desktop-menu ul {
@@ -268,8 +257,40 @@
   @apply max-w-[344px];
 }
 
+#clients-logo {
+  @apply bg-gray-50 drop-shadow-sm py-8 shadow-inner my-8 lg:my-16;
+}
+
+.logo-slider {
+  @apply overflow-hidden relative whitespace-nowrap;
+}
+
+.logo-marquee {
+  @apply inline-block whitespace-nowrap relative;
+  animation-name: marquee;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  transform: translate3d(0%, 0, 0);
+}
+
+.logo-marquee img {
+  @apply inline-block px-12 whitespace-nowrap;
+  max-width: 320px;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(0%, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
 #mobile-menu {
-  @apply fixed h-screen invisible left-0 opacity-0 top-0 w-full z-10 transition-opacity;
+  @apply fixed h-screen invisible left-0 opacity-0 top-0 w-full transition-opacity;
 }
 
 #mobile-menu:before {

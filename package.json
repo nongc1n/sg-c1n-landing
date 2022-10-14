@@ -30,12 +30,15 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.16.7",
+    "@sparing-software/100vh": "^1.2.0",
     "firebase-admin": "^10.0.2",
     "firebase-functions": "^3.16.0",
     "lodash": "^4.17.21",
+    "lozad": "^1.16.0",
     "pristinejs": "^0.1.9",
     "resize-observer": "^1.0.4",
     "smoothscroll-polyfill": "^0.4.4",
-    "toastify-js": "^1.11.2"
+    "toastify-js": "^1.11.2",
+    "video.js": "^7.20.3"
   }
 }

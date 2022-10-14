@@ -1,327 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="images/favicon.png" sizes="16x16" type="image/png" />
-    <title>C1 Network Services Singapore</title>
-    <script src="bundle.js"></script>
-    <script
-      src="https://www.google.com/recaptcha/api.js?render=6LcXETMeAAAAAENAN5bU8vrwUf9hvWzh8-o5mkv0"
-      async
-      defer
-    ></script>
-  </head>
-  <body class="preload">
-    <section id="intro">
-      <div id="stars"></div>
-      <div id="stars2"></div>
-      <div id="stars3"></div>
 
-      <picture>
-        <source media="(max-width: 559px)" srcset="images/intro-mobile.webp" type="image/webp"  />
-        <source media="(max-width: 559px)" srcset="images/intro-mobile.jpg" type="image/jpg" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>C1 Network Services Singapore</title>
+  <link rel="icon" href="images/favicon.png" sizes="16x16" type="image/png" />
+  <script src="https://www.google.com/recaptcha/api.js?render=6LcXETMeAAAAAENAN5bU8vrwUf9hvWzh8-o5mkv0" async
+    defer></script>
+  <script src="bundle.js"></script>
+</head>
 
-        <source media="(min-width: 560px)" srcset="images/intro.webp" type="image/webp" />
-        <source media="(min-width: 560px)" srcset="images/intro.jpg" type="image/jpg" />
+<body class="preload">
+  <section id="intro">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
 
-        <img
-          class="intro-bg"
-          src="images/intro.jpg"
-          alt="intro"
-        />
-      </picture>
+    <picture>
+      <source srcset="images/intro-new.webp" type="image/webp" />
+      <img class="intro-bg" src="images/intro-new.jpg" alt="intro" />
+    </picture>
 
-      <div class="container h-full relative">
-        <button aria-label="menu" id="btn-menu">
-          <svg
-            class="inline ml-4"
-            width="64"
-            height="64"
-            viewBox="0 0 64 64"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle cx="32" cy="32" r="31" stroke="white" stroke-width="2" />
-            <path
-              class="top-path"
-              d="M20 29L48 29"
-              stroke="white"
-              stroke-width="3"
-              stroke-linecap="round"
-            />
-            <path
-              class="bottom-path"
-              d="M16 37L44 37"
-              stroke="white"
-              stroke-width="3"
-              stroke-linecap="round"
-            />
-          </svg>
-        </button>
+    <div class="container h-full relative">
+      <button aria-label="menu" id="btn-menu">
+        <svg class="inline ml-4" width="64" height="64" viewBox="0 0 64 64" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="32" r="31" stroke="white" stroke-width="2" />
+          <path class="top-path" d="M20 29L48 29" stroke="white" stroke-width="3" stroke-linecap="round" />
+          <path class="bottom-path" d="M16 37L44 37" stroke="white" stroke-width="3" stroke-linecap="round" />
+        </svg>
+      </button>
 
-        <div id="desktop-menu">
-          <ul>
-            <li>
-              <a href="#about">About</a>
-            </li>
-            <li>
-              <a href="#event">Event</a>
-            </li>
-            <li>
-              <a href="#clients">Our Clients</a>
-            </li>
-          </ul>
+      <div id="desktop-menu">
+        <ul>
+          <li>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#events">Events</a>
+          </li>
+          <li>
+            <a href="#clients">Our Clients</a>
+          </li>
+        </ul>
 
-          <ul>
-            <li>
-              <a href="#knowledge">Local Knowledge</a>
-            </li>
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="bg-transparent">
-          <img
-            class="logo"
-            src="images/logo-white.svg"
-            alt="Crowd One Network Services"
-            width="273"
-            height="44"
-          />
-        </div>
-
-        <div class="content">
-          <div class="text-sm text-c1n-orange">
-            <p class="inline">What we do</p>
-            <img
-              class="inline ml-4 relative top-[6px] lg:ml-1"
-              src="images/arrow-red.svg"
-              alt="arrow"
-              width="43"
-              height="15"
-            />
-          </div>
-          <h1 class="mt-4">
-            We help our clients reach new and larger markets in Asia.
-          </h1>
-        </div>
+        <ul>
+          <li>
+            <a href="#knowledge">Local Knowledge</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
       </div>
-    </section>
 
-    <section id="about">
-      <div class="container">
-        <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-20 xl:gap-36">
-          <picture>
-            <source srcset="images/skarmavbild.webp" type="image/webp" />
-            <source srcset="images/skarmavbild.jpg" type="image/jpg" />
-            <img
-              src="images/skarmavbild.jpg"
-              alt="Skärmavbild"
-              width="520"
-              height="582"
-            />
-          </picture>
-
-          <div class="body mt-16 lg:mt-0 lg:flex lg:flex-col lg:justify-center">
-            <h2>We’re a professional services company</h2>
-
-            <p>
-              C1NS Singapore is a professional services company that provides
-              competencies such as event planning and hosting, communications
-              expertise, customer services, marketing, and market compliance.
-            </p>
-
-            <p>
-              We will provide the infrastructure and enable the provision of
-              both <mark>digital and physical meeting</mark> places for our
-              clients.
-            </p>
-          </div>
-        </div>
+      <div class="logo-container">
+        <picture>
+          <source srcset="images/c1-sg-white.webp" type="image/webp" />
+          <img class="logo" src="images/c1-sg-white.png" alt="Crowd One Network Services" width="273" height="44" />
+        </picture>
       </div>
-    </section>
 
-    <section id="knowledge">
-      <picture>
-        <source srcset="images/city.webp" type="image/webp" />
-        <source srcset="images/city.jpg" type="image/jpg" />
-        <img src="images/city.jpg" alt="City" />
-      </picture>
-      <div class="container flex flex-col justify-end h-full">
-        <div class="body">
-          <h2>We have local knowledge</h2>
+      <div class="content">
+        <div class="text-sm text-white">
+          <p class="inline">What we do</p>
+          <img class="inline ml-4 relative top-[6px] lg:ml-1" src="images/arrow.svg" alt="arrow" width="43"
+            height="15" />
+        </div>
+        <h1 class="mt-4">
+          We help our clients reach new and larger markets in Asia.
+        </h1>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-20 xl:gap-36">
+        <picture>
+          <source srcset="images/lounge.webp" type="image/webp" />
+          <source srcset="images/lounge.jpg" type="image/jpg" />
+          <img src="images/lounge.jpg" alt="Lounge" width="520" height="582" />
+        </picture>
+
+        <div class="body mt-16 lg:mt-0 lg:flex lg:flex-col lg:justify-center">
+          <h2>We’re a professional services company</h2>
 
           <p>
-            By using our local resources and knowledge we will set our clients
-            on the right path to achieve their goals.
+            C1 Singapore is a professional services company that provides
+            competencies such as event planning and hosting, communications
+            expertise, customer services, marketing, and market compliance.
+          </p>
+
+          <p>
+            We will provide the infrastructure and enable the provision of
+            both <mark>digital and physical meeting</mark> places for our
+            clients.
           </p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="event">
-      <div class="container">
-        <div class="flex flex-col lg:flex-row-reverse lg:gap-20 xl:gap-36">
-          <div>
-            <picture>
-              <source srcset="images/hosting.webp" type="image/webp" />
-              <source srcset="images/hosting.jpg" type="image/jpg" />
-              <img
-                src="images/hosting.jpg"
-                alt="Host"
-                width="570"
-                height="638"
-              />
-            </picture>
-          </div>
+  <section id="knowledge">
+    <picture>
+      <source srcset="images/city.webp" type="image/webp" />
+      <source srcset="images/city.jpg" type="image/jpg" />
+      <img src="images/city.jpg" alt="City" />
+    </picture>
+    <div class="container flex flex-col justify-end h-full">
+      <div class="body">
+        <h2>We have local knowledge</h2>
 
-          <div
-            class="body mt-16 lg:mt-0 lg:flex lg:flex-col lg:basis-[40%] lg:justify-center lg:justify-self-start"
-          >
-            <h2>Hosting unforgettable events</h2>
-
-            <p>
-              C1NS Singapore will host global forums, trainings, and events for
-              our clients in some of Singapore’s most exclusive and lavish
-              venues, with world class entertainment.
-            </p>
-
-            <p>
-              <mark>These large scale events</mark>
-              will be in high demand and tickets will be limited to ensure
-              exclusivity for our guests.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="clients">
-      <div class="container">
-        <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-20 xl:gap-36">
-          <picture>
-            <source srcset="images/meeting.webp" type="image/webp" />
-            <source srcset="images/meeting.jpg" type="image/jpg" />
-            <img
-              src="images/meeting.jpg"
-              alt="Meeting"
-              width="520"
-              height="582"
-            />
-          </picture>
-
-          <div class="body mt-16 lg:mt-0 lg:flex lg:flex-col lg:justify-center">
-            <h2>We support our clients</h2>
-
-            <p>
-              We provide our clients with live support in our Singapore office
-              and they can make use of our
-              <mark>world class facilities</mark> to help their businesses grow
-              and thrive.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div id="contact">
-      <div class="container">
-        <h2>Contact Us</h2>
-
-        <form id="contact-form" class="form mt-8">
-          <div class="grid grid-cols-1 lg:gap-10 lg:grid-cols-2">
-            <label class="form-group" for="name">
-              <span>Name</span>
-              <input
-                type="text"
-                name="name"
-                placeholder="First and last name*"
-                required
-              />
-            </label>
-
-            <label class="form-group mt-8 lg:mt-0" for="email">
-              <span>E-mail</span>
-              <input
-                type="email"
-                name="email"
-                placeholder="Your E-mail*"
-                required
-              />
-            </label>
-          </div>
-
-          <div class="grid grid-cols-1">
-            <label class="form-group mt-8" for="message">
-              <span>Message</span>
-              <textarea
-                class="w-full"
-                name="message"
-                placeholder="Write your message here..."
-                required
-              ></textarea>
-            </label>
-          </div>
-
-          <div class="flex justify-end mt-8">
-            <button class="flex items-center" type="submit">
-              <svg
-                id="spin"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <circle
-                  class="opacity-25"
-                  cx="12"
-                  cy="12"
-                  r="10"
-                  stroke="currentColor"
-                  stroke-width="4"
-                />
-                <path
-                  class="opacity-75"
-                  fill="currentColor"
-                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                />
-              </svg>
-              Send
-            </button>
-          </div>
-        </form>
+        <p>
+          By using our local resources and knowledge we will set our clients
+          on the right path to achieve their goals.
+        </p>
       </div>
     </div>
+  </section>
 
-    <footer>
-      <p>&copy; All the copyrights reserved</p>
-    </footer>
+  <section id="events">
+    <div class="container">
+      <div class="flex flex-col lg:flex-row-reverse lg:gap-20 xl:gap-36">
+        <div class="bg-black basis-full flex items-center">
+          <div class="w-full">
+            <video id="event-video" class="invisible lozad-video video-js shadow-lg">
+              <source src="videos/event.mp4" type="video/mp4">
+              </source>
+              <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider upgrading to a
+                web browser that
+                <a href="https://videojs.com/html5-video-support/" target="_blank">
+                  supports HTML5 video
+                </a>
+              </p>
+            </video>
+          </div>
+        </div>
 
-    <div id="mobile-menu">
-      <ul>
-        <li>
-          <a href="#about">About</a>
-        </li>
+        <div class="body mt-16 lg:mt-0 lg:flex lg:flex-col lg:basis-full lg:justify-center">
+          <h2>See our last events</h2>
 
-        <li>
-          <a href="#event">Event</a>
-        </li>
+          <p>
+            C1 Singapore will host global forums, trainings, and events for
+            our clients in some of Singapore’s most exclusive and lavish
+            venues, with world class entertainment.
+          </p>
 
-        <li>
-          <a href="#clients">Our Clients</a>
-        </li>
-
-        <li>
-          <a href="#knowledge">Local Knowledge</a>
-        </li>
-
-        <li>
-          <a href="#contact">Contact</a>
-        </li>
-      </ul>
+          <p>
+            <mark>These large scale events</mark>
+            will be in high demand and tickets will be limited to ensure
+            exclusivity for our guests.
+          </p>
+        </div>
+      </div>
     </div>
-  </body>
+  </section>
+
+  <section id="clients">
+    <div class="container">
+      <div class="grid grid-cols-1">
+        <div class="body">
+          <h2 class="text-center !max-w-full">We support our clients</h2>
+
+          <p>
+            We provide our clients with live support in our Singapore office
+            and they can make use of our
+            <mark>world class facilities</mark> to help their businesses grow
+            and thrive.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="clients-logo">
+    <div class="logo-slider">
+      <div class="logo-marquee">
+        <img class="h-8" src="images/planetix.svg" height="32" width="320" alt="PlanetIX" />
+        <img class="h-16" src="images/metaversy.svg" height="64" width="292" alt="Metaversy" />
+        <img class="h-12" src="images/moonbirdie.png" height="48" width="317" alt="Moon Birdie" />
+        <img class="h-12" src="./images/miggster-plus.svg" height="48" width="320" alt="Miggster Plus" />
+        <img class="h-8" src="images/mindoe.svg" height="32" width="238" alt="Mindoe" />
+        <img class="h-10 relative top-1" src="images/linkme.svg" height="40" width="234" alt="LinkMe" />
+      </div>
+      <div class="logo-marquee">
+        <img class="h-8" src="images/planetix.svg" height="32" width="320" alt="PlanetIX" />
+        <img class="h-16" src="images/metaversy.svg" height="64" width="292" alt="Metaversy" />
+        <img class="h-12" src="images/moonbirdie.png" height="48" width="317" alt="Moon Birdie" />
+        <img class="h-12" src="./images/miggster-plus.svg" height="48" width="320" alt="Miggster Plus" />
+        <img class="h-8" src="images/mindoe.svg" height="32" width="238" alt="Mindoe" />
+        <img class="h-10 relative top-1" src="images/linkme.svg" height="40" width="234" alt="LinkMe" />
+      </div>
+    </div>
+  </div>
+
+  <div id="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+
+      <form id="contact-form" class="form mt-8">
+        <div class="grid grid-cols-1 lg:gap-10 lg:grid-cols-2">
+          <label class="form-group" for="name">
+            <span>Name</span>
+            <input type="text" name="name" placeholder="First and last name*" required />
+          </label>
+
+          <label class="form-group mt-8 lg:mt-0" for="email">
+            <span>E-mail</span>
+            <input type="email" name="email" placeholder="Your E-mail*" required />
+          </label>
+        </div>
+
+        <div class="grid grid-cols-1">
+          <label class="form-group mt-8" for="message">
+            <span>Message</span>
+            <textarea class="w-full" name="message" placeholder="Write your message here..." required></textarea>
+          </label>
+        </div>
+
+        <div class="flex justify-end mt-8">
+          <button class="flex items-center" type="submit">
+            <svg id="spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" />
+              <path class="opacity-75" fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+            </svg>
+            Send
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">
+      <picture>
+        <source srcset="images/c1-sg-white.webp" type="image/webp" />
+        <img class="logo" src="images/c1-sg-white.png" alt="Crowd One Network Services" width="273" height="44" />
+      </picture>
+    </div>
+
+    <div class="mt-4 text-white">
+      <p class="leading-none font-bold text-center text-xs">C1 Network Services Singapore PTE LTD</p>
+      <p class="leading-normal max-w-xs m-auto mt-1.5 text-center text-xs">2902 Asia Square Tower 1, 8 Marina View, Singapore
+      </p>
+    </div>
+
+    <div class="mt-8 text-center text-white border-t border-gray-900">
+      <p class="leading-none mt-8 text-xs">&copy; All the copyrights reserved</p>
+    </div>
+  </footer>
+
+  <div id="mobile-menu">
+    <ul>
+      <li>
+        <a href="#about">About</a>
+      </li>
+
+      <li>
+        <a href="#events">Events</a>
+      </li>
+
+      <li>
+        <a href="#clients">Our Clients</a>
+      </li>
+
+      <li>
+        <a href="#knowledge">Local Knowledge</a>
+      </li>
+
+      <li>
+        <a href="#contact">Contact</a>
+      </li>
+    </ul>
+  </div>
+</body>
+
 </html>
